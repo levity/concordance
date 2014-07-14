@@ -1,0 +1,9 @@
+{
+  "name": "concordance",
+  "version": "0.0.1",
+  "dependencies": {
+    "velocity": "*",
+    "react": "*"
+  },
+  "private": true
+}
