@@ -1,8 +1,11 @@
-$ = jQuery = require('jquery');
-React = require('react');
+$ = jQuery    = require('jquery');
+caretPosition = require('textarea-caret-position/index');
+React         = require('react');
+
 require('velocity');
 
-var dom = React.DOM;
+var dom = React.DOM,
+  lineHeight = 33;
 
 var WordCounter = React.createClass({
   render: function() {
@@ -14,20 +17,32 @@ var TextInput = React.createClass({
   getInitialState: function() {
     return {wordCount: 0};
   },
-  calculateWordCount: function() {
-    var node = this.refs.textarea.getDOMNode();
-    var count = (' ' + node.value + ' ').split(/\s+/g).length - 2;
+  calculateWordCount: function(textarea) {
+    var count = (' ' + textarea.value + ' ').split(/\s+/g).length - 2;
     return count;
   },
-  updateWordCount: function() {
-    this.setState({wordCount: this.calculateWordCount()});
+  onTextChange: function() {
+    var textarea = this.refs.textarea.getDOMNode();
+    this.scrollToCaret(textarea);
+    this.setState({wordCount: this.calculateWordCount(textarea)});
+  },
+  scrollToCaret: function(textarea) {
+    var coords = caretPosition(textarea, textarea.selectionEnd),
+      $textarea = $(textarea),
+      newtop = coords.top - document.documentElement.clientHeight / 2,
+      diff = Math.abs($textarea.scrollTop() - newtop);
+    if (diff <= lineHeight) {
+      $textarea.scrollTop(newtop);
+    } else {
+      $(textarea).animate({scrollTop: newtop}, 200);
+    }
   },
   render: function() {
     return dom.div(
       {className: 'card'},
       WordCounter({count: this.state.wordCount}),
       dom.textarea({
-        onChange: this.updateWordCount,
+        onChange: this.onTextChange,
         defaultValue: 'hi. text is not saved',
         ref: 'textarea'
       })

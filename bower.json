@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "velocity": "*",
-    "react": "*"
+    "react": "*",
+    "textarea-caret-position": "*"
   },
   "private": true
 }

@@ -15,7 +15,7 @@ body {
 .card textarea {
   width: 100%;
   height: 100%;
-  padding: 200px 23% 100px;
+  padding: 40vh 23% 48vh;
   font-family: Inconsolata, monospaced;
   margin: 0;
   border: none;
@@ -35,7 +35,7 @@ body {
   line-height: 32px;
 }
 #count {
-  position: fixed;
+  position: absolute;
   bottom: 5px;
   left: 6px;
   color: #bbb;
