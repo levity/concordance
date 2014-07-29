@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #313131;
+  font-family: Inconsolata, monospaced;
+  color: white;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    padding: 40vh 23% 48vh;
+    font-family: Inconsolata, monospaced;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    display: block;
+    color: #c0c0c0;
+
+    border: none;
+    overflow: visible;
+    outline: none;
+
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+
+    font-size: 21px;
+    line-height: 32px;
+  }
+}
+
+#count {
+  position: absolute;
+  bottom: 5px;
+  left: 6px;
+  color: #bbb;
+  font-size: 18px;
+}

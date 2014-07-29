@@ -1,0 +1,14 @@
+{
+  "name": "concordance",
+  "description": "a text graph editor",
+  "version": "0.0.1",
+  "devDependencies": {
+    "debowerify": "~0.8.1",
+    "node-sass": "~0.9.3",
+    "grunt-cli": "latest",
+    "grunt-sass": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-browserify": "latest"
+  }
+}
