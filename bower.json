@@ -4,7 +4,9 @@
   "dependencies": {
     "velocity": "*",
     "react": "*",
-    "textarea-caret-position": "*"
+    "textarea-caret-position": "*",
+    "mousetrap": "*",
+    "lodash": "2.4.1"
   },
   "private": true
 }

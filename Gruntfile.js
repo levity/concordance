@@ -5,9 +5,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     sass: {
       dist: {
-        options: {
-          sourceMap: true
-        },
         files: {
           'public/index.css': 'app/index.scss'
         }
@@ -33,7 +30,10 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ['app/index.js'],
-        tasks: ['browserify:dist']
+        tasks: ['browserify:dist'],
+        options: {
+          spawn: false
+        }
       },
       css: {
         files: ['app/index.scss'],
